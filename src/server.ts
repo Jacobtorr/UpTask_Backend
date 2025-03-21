@@ -11,13 +11,7 @@ dotenv.config()
 connectDB()
 
 const app = express()
-app.use(cors({     origin: ['http://example.com',process.env.FRONTEND_URL],
-
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
-    
-    allowedHeaders: ['Content-Type', 'Authorization']
-    
-    }));
+app.use(cors(corsConfig))
 
 // Logging
 app.use(morgan('dev'))
